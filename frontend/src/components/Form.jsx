@@ -166,7 +166,6 @@ function Form() {
                     members: [],
                 });
                 setTimeout(() => {
-                    window.location.href = "/workspace";
                     setmessages({
                         type: "",
                         msgValue: ""
