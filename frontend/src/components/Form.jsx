@@ -166,6 +166,7 @@ function Form() {
                     members: [],
                 });
                 setTimeout(() => {
+                    window.location.href("/");
                     setmessages({
                         type: "",
                         msgValue: ""
