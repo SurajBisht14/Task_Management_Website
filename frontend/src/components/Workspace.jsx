@@ -269,7 +269,11 @@ function Workspace() {
                             <div key={member._id} className='mx-auto w-[95%] p-1 bg-[rgb(43,70,139)] mt-3 rounded-md flex items-center gap-3 font-bold text-white cursor-pointer transition-all relative'>
                               <div className='h-full flex items-center'>
                                 <span className="rounded-[50%] overflow-hidden text-white w-[30px] h-[30px] border-white border-2 flex items-center justify-center text-[15px]">
-                                  <img src={member.profileImage} alt={member.username} className='h-full w-full object-cover' />
+                                   <img 
+                                    src={member.profileImage || 'https://res.cloudinary.com/dnahmeyxh/image/upload/v1723298414/user_3161848_zvrvtx.png'} 
+                                    alt={member.username} 
+                                    className='h-full w-full object-cover' 
+                                  />
                                 </span>
                               </div>
                               <span className='text-[20px] font-[500]'>{member.username}</span>
@@ -425,7 +429,11 @@ function Workspace() {
                               <div className='mx-auto w-[95%] p-1 bg-[rgb(43,70,139)] mt-3 rounded-md flex items-center  gap-3 font-bold text-white cursor-pointer  transition-all relative'>
                                 <div className='h-full flex items-center'>
                                   <span className="rounded-[50%] overflow-hidden  text-white w-[30px] h-[30px]  border-white border-2 flex items-center justify-center text-[15px]">
-                                    <img src={e.profileImage} className='h-full w-full object-cover' />
+                                  <img 
+                                    src={e.profileImage || 'https://res.cloudinary.com/dnahmeyxh/image/upload/v1723298414/user_3161848_zvrvtx.png'} 
+                                    alt={e.username} 
+                                    className='h-full w-full object-cover' 
+                                  />
                                   </span>
                                 </div>
                                 <span className='text-[20px] font-[500]'>{e.username}</span>
