@@ -91,26 +91,4 @@ const taskSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 const Tasks = mongoose.model("Tasks", taskSchema)
-
-// Define the Message schema
-const messageSchema = new mongoose.Schema({
-  projectId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Projects',
-    required: true
-  },
-  message: {
-    type: String,
-    required: true
-  },
-  username: {
-    type: String,
-    required: true
-  },
-  date: {
-    type: String
-  }
-});
-const MessageCollection = mongoose.model('MessageCollection', messageSchema);
-
-module.exports = { User, Projects, Tasks, MessageCollection};
+module.exports = { User, Projects, Tasks};
