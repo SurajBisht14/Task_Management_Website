@@ -159,7 +159,7 @@ app.post('/formData', auth, async (req, res) => {
     await Promise.all(taskPromises);
 
     return res.json({
-      msg: "Successfully created ,Redirecting to workspace...",
+      msg: "Project Created Successfully",
     });
 
   } catch (error) {
