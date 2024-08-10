@@ -11,7 +11,7 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 
 app.use(cors({
-    origin: 'https://task-management-website-murex.vercel.app/',
+    origin: 'https://task-management-website-murex.vercel.app',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
