@@ -1,0 +1,24 @@
+/* Firefox */
+#formScroll {
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: rgb(43,70,139) lightgray; /* Handle and track colors */
+}
+
+/* WebKit browsers */
+#formScroll::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+#formScroll::-webkit-scrollbar-thumb {
+    background-color: rgb(43,70,139); /* Match the color specified for Firefox */
+    border-radius: 10px; /* Rounded corners for the handle */
+}
+
+#formScroll::-webkit-scrollbar-track {
+    background: lightgray; /* Match the color specified for Firefox */
+}
+
+/* Optional: customize the buttons (if needed) */
+#formScroll::-webkit-scrollbar-button {
+    display: none; /* Hide the buttons for a cleaner look */
+}

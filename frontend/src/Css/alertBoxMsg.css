@@ -1,0 +1,15 @@
+#alertBoxMsg{
+    animation:slider 3s linear 1;
+}
+
+@keyframes slider{
+    0% {
+         width: 100%
+     }
+     50%{
+        width: 50%;
+     }
+     100%{
+        width: 0;
+     }
+}

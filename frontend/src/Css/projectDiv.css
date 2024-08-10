@@ -1,0 +1,93 @@
+/* For Webkit browsers (Chrome, Safari) */
+#projectDiv::-webkit-scrollbar,
+#teamMember::-webkit-scrollbar,
+#TaskMember::-webkit-scrollbar {
+    width: 12px;
+    /* Set the width of the scrollbar */
+}
+
+#projectDiv::-webkit-scrollbar-thumb,
+#teamMember::-webkit-scrollbar-thumb,
+#TaskMember::-webkit-scrollbar-thumb {
+    background-color: rgb(43, 70, 139);
+    /* Color of the scrollbar thumb */
+}
+
+#projectDiv::-webkit-scrollbar-track,
+#teamMember::-webkit-scrollbar-track,
+#TaskMember::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Color of the scrollbar track */
+}
+
+
+/* For Firefox */
+#projectDiv , #teamMember , #TaskMember {
+    scrollbar-width: thin;
+    /* Width of the scrollbar */
+    scrollbar-color: rgb(43, 70, 139) #f1f1f1;
+    /* Color of the thumb and the track */
+}
+
+#msgDIv{
+    scrollbar-width: none;
+}
+
+#msgDIv::-webkit-scrollbar {
+    width: 0;
+}
+
+
+input[type="radio"] {
+    display: none;
+
+}
+
+/* Create a custom radio button */
+.custom-radio {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+/* Create the inner circle */
+.custom-radio::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 13px;
+    height: 13px;
+    background: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* Show the inner circle when checked */
+input[type="radio"]:checked+.custom-radio::after {
+    opacity: 1;
+}
+
+#pendingTime{
+    animation: rotation 2s linear infinite;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(180deg); 
+      }
+     
+      100% {
+        transform: rotate(360deg);
+      }
+}
