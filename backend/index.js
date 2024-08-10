@@ -10,20 +10,13 @@ const auth = require('./auth/auth.js');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 
+app.use(cors({
+    origin: 'https://task-management-website-murex.vercel.app/',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+  }));
 
-//   cors policy 
-// app.use(cors({
-//     origin: '',
-//     methods: ['GET', 'POST'],
-//     allowedHeaders: ['Content-Type', 'Authorization'],
-//     credentials: true
-//   }));
-app.use(cors(
-  {
-    origin: 'http://localhost:5173', // Your client URL
-    credentials: true, // Allow credentials (cookies) to be sent
-  }
-));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -112,13 +105,10 @@ app.post('/login', async (req, res) => {
       process.env.SECRET_CODE_WEB_TOKENS,
       { expiresIn: '1d' }
     )
-    // res.cookie('USER_COOKIE', token, {
-    //   httpOnly: true,
-    //   secure: process.env.NODE_ENV === 'production', // true in production
-    //   sameSite: 'None' // Required for cross-site cookie usage
-    // });
     res.cookie('USER_COOKIE', token, {
       httpOnly: true,
+      secure: process.env.NODE_ENV === 'production', // true in production
+      sameSite: 'None' // Required for cross-site cookie usage
     });
 
     let tokenExpiration = new Date().getTime() + 24 * 60 * 60 * 1000;
