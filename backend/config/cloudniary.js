@@ -13,7 +13,8 @@ cloudinary.config({
         return null
       }
       let response = await cloudinary.uploader.upload(localFilePath, {
-        resource_type: "auto"
+        resource_type: "auto",
+        folder: "taskManagement"
       })
     
       return response
