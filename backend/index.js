@@ -255,10 +255,12 @@ app.post('/gettingProject', auth, async (req, res) => {
   })
 
   let finalResult = await Promise.all(emailArray.map(async (email) => {
-    let result = await User.findOne({
-      email: email
-    });
-    return result;
+     const user = await User.findOne({ email });
+     return user || {
+      username: email,
+      email: email,
+      profileImage: 'https://res.cloudinary.com/dnahmeyxh/image/upload/v1724514038/userIcon_zo5qha.png'
+    };
   }));
 
   if (isAdmin) {
