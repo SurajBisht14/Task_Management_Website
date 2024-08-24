@@ -165,7 +165,7 @@ function Form() {
                     membersCount: "",
                     members: [],
                 });
-                window.location.href="/";
+                window.location.href="/workspace";
                 // setTimeout(() => {
                 //     window.location.href="/";
                 //     setmessages({
