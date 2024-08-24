@@ -156,23 +156,22 @@ function Form() {
 
             if (response.ok) {
                 const data = await response.json();
-                // setmessages({
-                //     type: "success",
-                //     msgValue: data.msg
-                // });
+                setmessages({
+                    type: "success",
+                    msgValue: data.msg
+                });
                 setProjectname({
                     projectName: "",
                     membersCount: "",
                     members: [],
                 });
-                window.location.href="/workspace";
-                // setTimeout(() => {
-                //     window.location.href="/";
-                //     setmessages({
-                //         type: "",
-                //         msgValue: ""
-                //     });
-                // }, 4000);
+                setTimeout(() => {
+                    window.location.href="/";
+                    setmessages({
+                        type: "",
+                        msgValue: ""
+                    });
+                }, 2000);
             } else {
                 const errorData = await response.json();
                 setmessages({
